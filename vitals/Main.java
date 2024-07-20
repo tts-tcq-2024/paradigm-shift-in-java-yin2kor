@@ -1,12 +1,17 @@
 package vitals;
 
+import vitals.constants.Languages;
+import vitals.languagelogs.PrintLog;
+import vitals.languagelogs.PrintLogFactory;
+
 public class Main {
+    private static final PrintLog logger = PrintLogFactory.getLanguageSpecificLogger(Languages.ENGLISH);
     static boolean batteryIsOk(float temperature, float soc, float chargeRate) {
         return temperatureIsOk(temperature) && socIsOk(soc) && chargeRateIsOk(chargeRate);
     }
 
     static void DisplayOutOfRange(String parameter) {
-        System.out.println(parameter + " is out of range!");
+        logger.Print(":", parameter, "key_out_of_range");
     }
 
     private static boolean isWithinRange(float value, float min, float max) {
@@ -18,7 +23,7 @@ public class Main {
         float max = 45;
         boolean tempIsOk = isWithinRange(temperature, min, max);
         if (!tempIsOk) {
-            DisplayOutOfRange("temperature");
+            DisplayOutOfRange("key_temperature");
         }
         return tempIsOk;
     }
@@ -28,7 +33,7 @@ public class Main {
         float max = 80;
         boolean socIsOk = isWithinRange(soc, min, max);
         if (!socIsOk) {
-            DisplayOutOfRange("State of Charge");
+            DisplayOutOfRange("key_soc");
         }
         return socIsOk;
     }
@@ -38,12 +43,14 @@ public class Main {
         float max = 0.8f;
         boolean chargeRateOk = isWithinRange(chargeRate, min, max);
         if (!chargeRateOk) {
-            DisplayOutOfRange("Charge Rate");
+            DisplayOutOfRange("key_charge_rate");
         }
         return chargeRateOk;
     }
 
     public static void main(String[] args) {
+        System.out.println("Hi");
+        batteryIsOk(100, 80,1f);
         assert (batteryIsOk(25, 70, 0.7f) == true);
         assert (batteryIsOk(1, 70, 0.7f) == true);
         assert (batteryIsOk(44, 70, 0.7f) == true);
