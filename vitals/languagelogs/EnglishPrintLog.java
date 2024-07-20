@@ -5,7 +5,7 @@ import java.util.HashMap;
 
 public class EnglishPrintLog extends PrintLog {
 
-    private static final HashMap<String,String> sLogs = new HashMap<>() {{
+    private static final HashMap<String,String> sLogs = new HashMap<String, String>() {{
         put("key_low", "Lower limit");
         put("key_high", "Upper limit");
         put("key_normal", "In range");

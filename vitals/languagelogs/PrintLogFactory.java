@@ -7,7 +7,7 @@ import java.util.LinkedHashMap;
 
 public class PrintLogFactory {
 
-    public static final HashMap<Languages, PrintLog> sLanguageLogMaps = new LinkedHashMap<>() {{
+    public static final HashMap<Languages, PrintLog> sLanguageLogMaps = new LinkedHashMap<Languages, PrintLog>() {{
        put(Languages.ENGLISH, new EnglishPrintLog());
        put(Languages.GERMAIN, new GermainPrintLog());
     }};

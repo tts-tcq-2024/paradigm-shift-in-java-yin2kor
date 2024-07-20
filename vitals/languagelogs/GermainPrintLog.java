@@ -4,7 +4,7 @@ import java.util.HashMap;
 
 public class GermainPrintLog extends PrintLog {
 
-    private static final HashMap<String,String> sLogs = new HashMap<>() {{
+    private static final HashMap<String,String> sLogs = new HashMap<String, String>() {{
         put("key_low", "Untergrenze");
         put("key_high", "Obergrenze");
         put("key_normal", "Im Bereich");

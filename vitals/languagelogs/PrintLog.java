@@ -16,7 +16,7 @@ public abstract class PrintLog {
         // map to transform
         List<String> logs = Arrays.stream(keys).
                 filter(key -> getLogMap().containsKey(key)).
-                map(key -> { return getLogMap().get(key);}).toList();
+                map(key -> getLogMap().get(key)).toList();
         System.out.println(String.join(delimiter, logs));
     }
 
