@@ -16,11 +16,19 @@ public class BatteryComponent {
     private final Map<Status, StatusLimit> mStatusLimitsMap;
 
     public BatteryComponent(Metrics metrics, List<StatusLimit> statusLimits) {
+        checkIfListValid(statusLimits);
+        mMetrics = metrics;
+        mStatusLimitsMap = statusLimits.stream().collect(Collectors.toMap(StatusLimit::getStatus, statusLimit -> statusLimit));
+        checkIfDangerPresent();
+    }
+
+    private void checkIfListValid(List<StatusLimit> statusLimits) {
         if (null == statusLimits || statusLimits.isEmpty()) {
             throw new IllegalArgumentException("Status limits must contain at least one entry");
         }
-        mMetrics = metrics;
-        mStatusLimitsMap = statusLimits.stream().collect(Collectors.toMap(StatusLimit::getStatus, statusLimit -> statusLimit));
+    }
+
+    private void checkIfDangerPresent() {
         if (!mStatusLimitsMap.containsKey(Status.DANGER)) {
             throw new IllegalArgumentException("Status limits must contain at DANGER entry");
         }
