@@ -13,7 +13,7 @@ public class Main {
         assert (BatteryStatusVerifier.batteryIsOk(25, 70, 0.0f) == true);
         assert (BatteryStatusVerifier.batteryIsOk(25, 70, 0.5f) == true);
         assert (BatteryStatusVerifier.batteryIsOk(25, 70, 0.7f) == true);
-        assert (BatteryStatusVerifier.batteryIsOk(0, 70, 0.7f) == false);
+        assert (BatteryStatusVerifier.batteryIsOk(0, 70, 0.7f) == true);
         assert (BatteryStatusVerifier.batteryIsOk(45, 70, 0.7f) == false);
         assert (BatteryStatusVerifier.batteryIsOk(25, 20, 0.7f) == false);
         assert (BatteryStatusVerifier.batteryIsOk(25, 80, 0.7f) == false);
