@@ -25,8 +25,7 @@ public class BatteryStatusVerifier {
             new StatusLimit(Status.DANGER, 20f, 80f)
     ));
     private static final BatteryComponent sChargeRateComponent = new BatteryComponent(Metrics.CHARGE_RATE, Arrays.asList(
-            new StatusLimit(Status.WARNING, 1f, 0.6f),
-            new StatusLimit(Status.BREACH, 0f, 0.7f),
+            new StatusLimit(Status.WARNING, 1f, 0.3f),
             new StatusLimit(Status.DANGER, -0.1f, 0.8f)
     ));
 

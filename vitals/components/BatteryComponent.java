@@ -21,6 +21,9 @@ public class BatteryComponent {
         }
         mMetrics = metrics;
         mStatusLimitsMap = statusLimits.stream().collect(Collectors.toMap(StatusLimit::getStatus, statusLimit -> statusLimit));
+        if (!mStatusLimitsMap.containsKey(Status.DANGER)) {
+            throw new IllegalArgumentException("Status limits must contain at DANGER entry");
+        }
     }
 
     public Metrics getMetrics() {
