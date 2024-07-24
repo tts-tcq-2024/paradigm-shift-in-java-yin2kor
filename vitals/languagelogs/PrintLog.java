@@ -15,8 +15,7 @@ public abstract class PrintLog {
         // filter() used to remove non existing keys
         // map to transform
         List<String> logs = Arrays.stream(keys).
-                filter(key -> getLogMap().containsKey(key)).
-                map(key -> getLogMap().get(key)).collect(Collectors.toList());
+                map(key -> getLogMap().getOrDefault(key,key)).collect(Collectors.toList());
         System.out.println(String.join(delimiter, logs));
     }
 

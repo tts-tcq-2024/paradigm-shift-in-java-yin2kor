@@ -1,10 +1,10 @@
 package vitals.constants;
 
 public enum Languages {
-    ENGLISH("key_english"),
-    GERMAIN("key_germain");
+    ENGLISH("key_language_english"),
+    GERMAIN("key_language_germain");
 
-    String mKey;
+    private final String mKey;
     Languages(String key) {
         mKey = key;
     }
