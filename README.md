@@ -59,3 +59,12 @@ Shorten the Semantic distance
 - Functional to express relation between input and output
 - Object oriented to encapsulate state with actions
 - Apect oriented to capture repeating aspects
+
+batteryComponent -> BatteryParameter
+Metircs -> BatteryVital
+Status - > vital status
+Danger -> out of range
+StatusLimit -> 
+
+Metrics metrics - > metric![image](https://github.com/user-attachments/assets/2d91db7e-b28f-48a3-853b-5d5c2011ab07)
+
