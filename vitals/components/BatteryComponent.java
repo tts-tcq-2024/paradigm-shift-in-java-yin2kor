@@ -53,12 +53,12 @@ public class BatteryComponent {
     private Limit checkStatusLimitRange(final Status status, final float value) {
         Limit currentLimit = Limit.IN_RANGE;
         if (mStatusLimitsMap.containsKey(status)) {
-            currentLimit = checkLimits(mStatusLimitsMap.get(status), value);
+            currentLimit = getValueLimitForStatus(mStatusLimitsMap.get(status), value);
         }
         return currentLimit;
     }
 
-    private Limit checkLimits(final StatusLimit statusLimit, final float value) {
+    private Limit getValueLimitForStatus(final StatusLimit statusLimit, final float value) {
         Limit currentLimit = Limit.IN_RANGE;
         if (value > statusLimit.getUpperLimit()) {
             currentLimit = Limit.UPPER_LIMIT;
