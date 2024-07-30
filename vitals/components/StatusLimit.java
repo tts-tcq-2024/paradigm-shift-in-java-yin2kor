@@ -1,15 +1,11 @@
 package vitals.components;
 
-import vitals.constants.Status;
+import vitals.constants.VitalStatus;
 
 public class StatusLimit {
-    private final Status mStatus;
     private final float mUpperLimit;
     private final float mLowerLimit;
 
-    public Status getStatus() {
-        return mStatus;
-    }
 
     public float getUpperLimit() {
         return mUpperLimit;
@@ -19,8 +15,7 @@ public class StatusLimit {
         return mLowerLimit;
     }
 
-    public StatusLimit(Status mStatus, float mLowerLimit, float mUpperLimit) {
-        this.mStatus = mStatus;
+    public StatusLimit(float mLowerLimit, float mUpperLimit) {
         this.mLowerLimit = mLowerLimit;
         this.mUpperLimit = mUpperLimit;
     }

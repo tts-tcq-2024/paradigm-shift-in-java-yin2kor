@@ -27,14 +27,14 @@ We will explore the charging phase of Li-ion batteries to start with.
 ## Issues
 
 - The code here has high complexity in a single function.
-- The tests are not complete - they do not cover all the needs of a consumer
+- The vitals.tests are not complete - they do not cover all the needs of a consumer
 
 ## Tasks
 
 1. Reduce the cyclomatic complexity.
 1. Separate pure functions from I/O
 1. Avoid duplication - functions that do nearly the same thing
-1. Complete the tests - cover all conditions.
+1. Complete the vitals.tests - cover all conditions.
 1. To take effective action, we need to know
 the abnormal measure and the breach -
 whether high or low. Add this capability.
@@ -62,9 +62,9 @@ Shorten the Semantic distance
 
 batteryComponent -> BatteryParameter
 Metircs -> BatteryVital
-Status - > vital status
+Status - > vital vitalStatus
 Danger -> out of range
 StatusLimit -> 
 
-Metrics metrics - > metric![image](https://github.com/user-attachments/assets/2d91db7e-b28f-48a3-853b-5d5c2011ab07)
+Metrics batteryVital - > metric![image](https://github.com/user-attachments/assets/2d91db7e-b28f-48a3-853b-5d5c2011ab07)
 
