@@ -27,8 +27,4 @@ public enum VitalStatus {
     public static List<VitalStatus> getOrderedStatus() {
         return S_ORDERED_VITAL_STATUS_LIST;
     }
-
-    public static boolean isGreater(VitalStatus current, VitalStatus base) {
-        return S_ORDERED_VITAL_STATUS_LIST.indexOf(current) > S_ORDERED_VITAL_STATUS_LIST.indexOf(base);
-    }
 }

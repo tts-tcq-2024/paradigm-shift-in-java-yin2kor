@@ -1,4 +1,4 @@
-package vitals.languagelogs;
+package vitals.log;
 
 import vitals.constants.Languages;
 import vitals.localization.ILocalization;
