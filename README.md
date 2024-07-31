@@ -60,11 +60,31 @@ Shorten the Semantic distance
 - Object oriented to encapsulate state with actions
 - Apect oriented to capture repeating aspects
 
-batteryComponent -> BatteryParameter
-Metircs -> BatteryVital
-Status - > vital vitalStatus
-Danger -> out of range
-StatusLimit -> 
+## Supported Vitals
+- Temperature
+- Soc
+- Charge Rate
 
-Metrics batteryVital - > metric![image](https://github.com/user-attachments/assets/2d91db7e-b28f-48a3-853b-5d5c2011ab07)
+## Supported Vital Status
+- Out of range
+- breach
+- warning
+- normal
+
+## Supported limits
+- upper limit
+- lower limit
+- in range
+
+## Supported language logs 
+- English
+- Germain
+
+## How It Works
+- Current each Battery vital has been configured with defined upper and lower limits for their vital statuses
+- The Battery vital may or may not have all status limits but will always have at least out of range limits.
+- If the provided value it exceeding any limit then warning logs will be printed
+- If the provided value is out of range then warning logs as well as out of range log will be printed
+- Based on the language selected, the log will be printed in that language
+- mEnabledLogList is used to mention what vital status must be printed in the logs
 

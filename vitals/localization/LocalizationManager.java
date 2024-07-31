@@ -52,10 +52,10 @@ public class LocalizationManager implements ILocalization{
 
 
     @Override
-    public String getLog(Languages mLanguage, String key) {
+    public String getLog(Languages language, String key) {
         String log = "";
-        if (mLogMap.containsKey(key) && mLogMap.get(key).containsKey(mLanguage)) {
-            log = mLogMap.get(key).get(mLanguage);
+        if (mLogMap.containsKey(key) && mLogMap.get(key).containsKey(language)) {
+            log = mLogMap.get(key).get(language);
         }
         return log;
     }

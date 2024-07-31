@@ -4,7 +4,7 @@ import vitals.BatteryStatusVerifier;
 
 public class BatteryStatusVerifierTest {
 
-    public static void runTests() {
+    public static void runAllTests() {
         assert (BatteryStatusVerifier.batteryIsOk(25, 70, 0.7f) == true);
         assert (BatteryStatusVerifier.batteryIsOk(1, 70, 0.7f) == true);
         assert (BatteryStatusVerifier.batteryIsOk(44, 70, 0.7f) == true);

@@ -21,7 +21,7 @@ public class Logger {
         mLanguage = language;
     }
 
-    public void Print(String delimiter, String... keys) {
+    public void print(String delimiter, String... keys) {
         // to convert all the keys into the language specific logs,
         // map to transform
         List<String> logs = Arrays.stream(keys).
