@@ -15,7 +15,6 @@ import java.util.List;
 public class BatteryStatusVerifier {
 
     private static final vitals.log.Logger mLogger = new Logger(new LocalizationManager());
-    private static final List<VitalStatus> mEnabledLogList = Arrays.asList(VitalStatus.OUT_OF_RANGE, VitalStatus.WARNING, VitalStatus.BREACH);
     private static final HashMap<BatteryVital, BatteryParameter> mBatteryParameterMaps = new HashMap<BatteryVital, BatteryParameter>() {{
         put(BatteryVital.TEMPERATURE, new BatteryParameter(BatteryVital.TEMPERATURE, new HashMap<VitalStatus, StatusLimit>() {{
             put(VitalStatus.WARNING, new StatusLimit(10f, 35f));
@@ -47,7 +46,7 @@ public class BatteryStatusVerifier {
         final List<VitalStatus> vitalStatusList = VitalStatus.getOrderedStatus();
         final int vitalStatusIndex = vitalStatusList.indexOf(vitalStatus);
         for (int vitalIndex = vitalStatusList.size() - 2; vitalIndex >= 0; vitalIndex--) {
-            if (vitalStatusIndex <= vitalIndex && mEnabledLogList.contains(vitalStatusList.get(vitalIndex))) {
+            if (vitalStatusIndex <= vitalIndex) {
                 mLogger.print(":", vitalStatusList.get(vitalIndex).getKey(), batteryParameter.getVital().getKey(), limit.getKey());
             }
         }

@@ -86,5 +86,4 @@ Shorten the Semantic distance
 - If the provided value it exceeding any limit then warning logs will be printed
 - If the provided value is out of range then warning logs as well as out of range log will be printed
 - Based on the language selected, the log will be printed in that language
-- mEnabledLogList is used to mention what vital status must be printed in the logs
 
