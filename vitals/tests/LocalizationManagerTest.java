@@ -20,7 +20,7 @@ public class LocalizationManagerTest {
     private static void testGetLog2() {
         final String expectedLog = "Laderate";
         final String key = BatteryVital.CHARGE_RATE.getKey();
-        final Languages language = Languages.ENGLISH;
+        final Languages language = Languages.GERMAIN;
         LocalizationManager localizationManager = new LocalizationManager();
         assert (expectedLog.equals(localizationManager.getLog(language, key)));
     }
