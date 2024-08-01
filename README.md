@@ -87,3 +87,9 @@ Shorten the Semantic distance
 - If the provided value is out of range then warning logs as well as out of range log will be printed
 - Based on the language selected, the log will be printed in that language
 
+Fix
+- change folder to parameter
+- used jagged array
+- use ILogger and implement in ConsoleLogger
+  
+
