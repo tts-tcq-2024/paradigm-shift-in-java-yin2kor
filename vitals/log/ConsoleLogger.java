@@ -5,6 +5,8 @@ import vitals.localization.ILocalization;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class ConsoleLogger implements ILogger {
 
@@ -33,7 +35,7 @@ public class ConsoleLogger implements ILogger {
                         log = "";
                     }
                     return log;
-                }).toList();
+                }).collect(Collectors.toList());
         System.out.println(String.join(delimiter, logs));
     }
 }
