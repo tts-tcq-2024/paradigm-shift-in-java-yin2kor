@@ -27,14 +27,14 @@ We will explore the charging phase of Li-ion batteries to start with.
 ## Issues
 
 - The code here has high complexity in a single function.
-- The tests are not complete - they do not cover all the needs of a consumer
+- The vitals.tests are not complete - they do not cover all the needs of a consumer
 
 ## Tasks
 
 1. Reduce the cyclomatic complexity.
 1. Separate pure functions from I/O
 1. Avoid duplication - functions that do nearly the same thing
-1. Complete the tests - cover all conditions.
+1. Complete the vitals.tests - cover all conditions.
 1. To take effective action, we need to know
 the abnormal measure and the breach -
 whether high or low. Add this capability.
@@ -59,3 +59,37 @@ Shorten the Semantic distance
 - Functional to express relation between input and output
 - Object oriented to encapsulate state with actions
 - Apect oriented to capture repeating aspects
+
+## Supported Vitals
+- Temperature
+- Soc
+- Charge Rate
+
+## Supported Vital Status
+- Out of range
+- breach
+- warning
+- normal
+
+## Supported limits
+- upper limit
+- lower limit
+- in range
+
+## Supported language logs 
+- English
+- Germain
+
+## How It Works
+- Current each Battery vital has been configured with defined upper and lower limits for their vital statuses
+- The Battery vital may or may not have all status limits but will always have at least out of range limits.
+- If the provided value it exceeding any limit then warning logs will be printed
+- If the provided value is out of range then warning logs as well as out of range log will be printed
+- Based on the language selected, the log will be printed in that language
+
+Fix
+- change folder to parameter
+- used jagged array
+- use ILogger and implement in ConsoleLogger
+  
+
