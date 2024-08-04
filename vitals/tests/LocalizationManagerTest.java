@@ -28,7 +28,7 @@ public class LocalizationManagerTest {
     // To test valid language and missing log key
     private static void testGetLog3() {
         final String expectedLog = "";
-        final int key = 5;
+        final int key = -1;
         final Languages language = Languages.ENGLISH;
         LocalizationManager localizationManager = new LocalizationManager();
         assert (expectedLog.equals(localizationManager.getLog(language, key)));
