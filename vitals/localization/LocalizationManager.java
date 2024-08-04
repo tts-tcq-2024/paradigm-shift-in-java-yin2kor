@@ -7,6 +7,10 @@ import java.util.Map;
 
 public class LocalizationManager implements ILocalization{
 
+    private static final String[][] mLocalizedLogs = new String[][] {
+            {"Lower Limit", "Upper Limit", "In Range", "Normal", "Warning", "Breach", "Out of Range", "Temperature", "SOC", "Charge Rate"},
+            {"Untergrenze", "Obergrenze", "Im Bereich", "Normal", "Warnung", "Verstoß", "Außerhalb des Bereichs", "Temperatur", "Ladezustand", "Laderate"}
+    };
     private static final HashMap<String, HashMap<Languages, String>> mLogMap = new HashMap<String, HashMap<Languages, String>>() {{
         put("key_lower_limit", new HashMap<Languages, String>() {{
             put(Languages.ENGLISH, "Lower Limit");
@@ -52,10 +56,10 @@ public class LocalizationManager implements ILocalization{
 
 
     @Override
-    public String getLog(Languages language, String key) {
+    public String getLog(Languages language, int logIndex) {
         String log = "";
-        if (mLogMap.containsKey(key) && mLogMap.get(key).containsKey(language)) {
-            log = mLogMap.get(key).get(language);
+        if (mLocalizedLogs.length > language.getIndex() && mLocalizedLogs[language.getIndex()].length > logIndex) {
+            log = mLocalizedLogs[language.getIndex()][logIndex];
         }
         return log;
     }

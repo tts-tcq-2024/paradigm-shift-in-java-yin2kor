@@ -1,6 +1,6 @@
 package vitals.tests;
 
-import vitals.components.StatusLimit;
+import vitals.paramter.StatusLimit;
 
 public class StatusLimitTest {
 

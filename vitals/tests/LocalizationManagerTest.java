@@ -10,7 +10,7 @@ public class LocalizationManagerTest {
     // To test valid english language and log key
     private static void testGetLog1() {
         final String expectedLog = "Breach";
-        final String key = VitalStatus.BREACH.getKey();
+        final int key = VitalStatus.BREACH.getIndex();
         final Languages language = Languages.ENGLISH;
         LocalizationManager localizationManager = new LocalizationManager();
         assert (expectedLog.equals(localizationManager.getLog(language, key)));
@@ -19,7 +19,7 @@ public class LocalizationManagerTest {
     // To test valid germain language and log key
     private static void testGetLog2() {
         final String expectedLog = "Laderate";
-        final String key = BatteryVital.CHARGE_RATE.getKey();
+        final int key = BatteryVital.CHARGE_RATE.getIndex();
         final Languages language = Languages.GERMAIN;
         LocalizationManager localizationManager = new LocalizationManager();
         assert (expectedLog.equals(localizationManager.getLog(language, key)));
@@ -28,7 +28,7 @@ public class LocalizationManagerTest {
     // To test valid language and missing log key
     private static void testGetLog3() {
         final String expectedLog = "";
-        final String key = "testKey";
+        final int key = 5;
         final Languages language = Languages.ENGLISH;
         LocalizationManager localizationManager = new LocalizationManager();
         assert (expectedLog.equals(localizationManager.getLog(language, key)));

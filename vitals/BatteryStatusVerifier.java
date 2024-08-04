@@ -1,20 +1,20 @@
 package vitals;
 
-import vitals.components.BatteryParameter;
-import vitals.components.StatusLimit;
+import vitals.log.ILogger;
+import vitals.paramter.BatteryParameter;
+import vitals.paramter.StatusLimit;
 import vitals.constants.Limit;
 import vitals.constants.BatteryVital;
 import vitals.constants.VitalStatus;
-import vitals.log.Logger;
+import vitals.log.ConsoleLogger;
 import vitals.localization.LocalizationManager;
 
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 
 public class BatteryStatusVerifier {
 
-    private static final vitals.log.Logger mLogger = new Logger(new LocalizationManager());
+    private static final ILogger M_CONSOLE_LOGGER = new ConsoleLogger(new LocalizationManager());
     private static final HashMap<BatteryVital, BatteryParameter> mBatteryParameterMaps = new HashMap<BatteryVital, BatteryParameter>() {{
         put(BatteryVital.TEMPERATURE, new BatteryParameter(BatteryVital.TEMPERATURE, new HashMap<VitalStatus, StatusLimit>() {{
             put(VitalStatus.WARNING, new StatusLimit(10f, 35f));
@@ -47,7 +47,7 @@ public class BatteryStatusVerifier {
         final int vitalStatusIndex = vitalStatusList.indexOf(vitalStatus);
         for (int vitalIndex = vitalStatusList.size() - 2; vitalIndex >= 0; vitalIndex--) {
             if (vitalStatusIndex <= vitalIndex) {
-                mLogger.print(":", vitalStatusList.get(vitalIndex).getKey(), batteryParameter.getVital().getKey(), limit.getKey());
+                M_CONSOLE_LOGGER.print(":", vitalStatusList.get(vitalIndex).getIndex(), batteryParameter.getVital().getIndex(), limit.getIndex());
             }
         }
     }

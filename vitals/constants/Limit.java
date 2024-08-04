@@ -1,16 +1,16 @@
 package vitals.constants;
 
 public enum Limit {
-    LOWER_LIMIT("key_lower_limit"),
-    UPPER_LIMIT("key_upper_limit"),
-    IN_RANGE("key_in_range");
-    private final String mKey;
+    LOWER_LIMIT(0),
+    UPPER_LIMIT(1),
+    IN_RANGE(2);
+    private final int mIndex;
 
-    Limit(String key) {
-        mKey = key;
+    Limit(int index) {
+        mIndex = index;
     }
 
-    public String getKey() {
-        return mKey;
+    public int getIndex() {
+        return mIndex;
     }
 }

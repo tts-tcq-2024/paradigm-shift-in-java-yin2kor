@@ -1,7 +1,7 @@
 package vitals.tests;
 
-import vitals.components.BatteryParameter;
-import vitals.components.StatusLimit;
+import vitals.paramter.BatteryParameter;
+import vitals.paramter.StatusLimit;
 import vitals.constants.BatteryVital;
 import vitals.constants.Limit;
 import vitals.constants.VitalStatus;

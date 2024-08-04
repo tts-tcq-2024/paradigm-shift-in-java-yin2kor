@@ -1,6 +1,4 @@
-package vitals.components;
-
-import vitals.constants.VitalStatus;
+package vitals.paramter;
 
 public class StatusLimit {
     private final float mUpperLimit;

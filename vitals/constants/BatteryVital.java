@@ -2,16 +2,16 @@ package vitals.constants;
 
 public enum BatteryVital {
 
-    TEMPERATURE("key_vital_temperature"),
-    SOC("key_vital_soc"),
-    CHARGE_RATE("key_vital_charge_rate");
+    TEMPERATURE(7),
+    SOC(8),
+    CHARGE_RATE(9);
 
-    private final String mKey;
-    BatteryVital(String key) {
-        mKey = key;
+    private final int mIndex;
+    BatteryVital(int index) {
+        mIndex = index;
     }
 
-    public String getKey() {
-        return mKey;
+    public int getIndex() {
+        return mIndex;
     }
 }

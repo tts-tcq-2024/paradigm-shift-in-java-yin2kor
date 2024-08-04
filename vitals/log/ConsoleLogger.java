@@ -5,15 +5,14 @@ import vitals.localization.ILocalization;
 
 import java.util.Arrays;
 import java.util.List;
-import java.util.stream.Collectors;
 
-public class Logger {
+public class ConsoleLogger implements ILogger {
 
     ILocalization mLocalization;
 
     Languages mLanguage = Languages.ENGLISH;
 
-    public Logger(ILocalization localization) {
+    public ConsoleLogger(ILocalization localization) {
         mLocalization = localization;
     }
 
@@ -21,17 +20,20 @@ public class Logger {
         mLanguage = language;
     }
 
-    public void print(String delimiter, String... keys) {
+    @Override
+    public void print(String delimiter, int... logIndexes) {
         // to convert all the keys into the language specific logs,
         // map to transform
-        List<String> logs = Arrays.stream(keys).
-                map(key -> {
-                    String log = mLocalization.getLog(mLanguage, key);
+
+        List<String> logs = Arrays.stream(logIndexes).
+                filter(index -> !mLocalization.getLog(mLanguage, index).isEmpty()).
+                mapToObj(index -> {
+                    String log = mLocalization.getLog(mLanguage, index);
                     if (log.isEmpty()) {
-                        log = key;
+                        log = "";
                     }
                     return log;
-                }).collect(Collectors.toList());
+                }).toList();
         System.out.println(String.join(delimiter, logs));
     }
 }

@@ -1,16 +1,16 @@
 package vitals.constants;
 
 public enum Languages {
-    ENGLISH("key_language_english"),
-    GERMAIN("key_language_germain");
+    ENGLISH(0),
+    GERMAIN(1);
 
-    private final String mKey;
-    Languages(String key) {
-        mKey = key;
+    private final int mIndex;
+    Languages(int index) {
+        mIndex = index;
     }
 
-    public String getKey() {
-        return mKey;
+    public int getIndex() {
+        return mIndex;
     }
 
 }

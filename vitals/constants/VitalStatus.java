@@ -4,10 +4,10 @@ import java.util.Arrays;
 import java.util.List;
 
 public enum VitalStatus {
-    OUT_OF_RANGE("key_status_out_of_range"),
-    BREACH("key_status_breach"),
-    WARNING("key_status_warning"),
-    NORMAL("key_status_normal");
+    OUT_OF_RANGE(6),
+    BREACH(5),
+    WARNING(4),
+    NORMAL(3);
 
     private static final List<VitalStatus> S_ORDERED_VITAL_STATUS_LIST = Arrays.asList(
             OUT_OF_RANGE,
@@ -15,13 +15,13 @@ public enum VitalStatus {
             WARNING,
             NORMAL
     );
-    private final String mKey;
-    VitalStatus(String key) {
-        mKey = key;
+    private final int mIndex;
+    VitalStatus(int index) {
+        mIndex = index;
     }
 
-    public String getKey() {
-        return mKey;
+    public int getIndex() {
+        return mIndex;
     }
 
     public static List<VitalStatus> getOrderedStatus() {

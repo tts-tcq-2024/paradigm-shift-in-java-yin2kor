@@ -1,4 +1,4 @@
-package vitals.components;
+package vitals.paramter;
 
 import vitals.constants.BatteryVital;
 import vitals.constants.Limit;
